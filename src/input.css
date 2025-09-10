@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/*  Custom fonts by @fontface*/
+/*@font-face {
+    font-family: 'Roboto bold';
+    src: url('../fonts/Roboto-Bold.eot');
+    src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.woff') format('woff'),
+        url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+
+    
+@import "tailwindcss";  
+
+@theme {
+  --font-roboto: "Roboto", "sans-serif";   
+/*  --font-roboto1: "Roboto bold"; */
+}
+/* D:\vidhyashri\html\html-installation */
+/*https://www.canva.com/design/DAGx5pVJflk/e8-D4knIFaIwsrox8UHF5Q/edit*/
+/*npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch*/

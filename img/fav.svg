@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 50 160 160" width="400" height="200">
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .flow1 {
+        stroke-dasharray: 1500;
+        stroke-dashoffset: 0;
+        animation: flow1 6s linear infinite;
+      }
+      .flow2 {
+        stroke-dasharray: 1500;
+        stroke-dashoffset: 0;
+        animation: flow2 9s linear infinite reverse;
+        opacity: 0.6;
+      }
+      @keyframes flow1 { to { stroke-dashoffset: -3000; } }
+      @keyframes flow2 { to { stroke-dashoffset: -3000; } }
+    </style>
+  </defs>
+
+  <!-- Base thin outline -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" fill="none" stroke="#082131" stroke-width="2" opacity="0.3">VL</text>
+
+  <!-- Flowing bold stroke -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" fill="none" stroke="#082131" stroke-width="10" class="flow1" filter="url(#glow)">VL</text>
+
+  <!-- Extra flowing highlight -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" fill="none" stroke="#082131" stroke-width="4" class="flow2" filter="url(#glow)">VL</text>
+</svg>
