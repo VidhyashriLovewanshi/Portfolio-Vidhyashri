@@ -1,0 +1,835 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="img/black-logo4.png">
+<link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'>
+  <link href="src/output.css" rel="stylesheet">
+  
+      <title>Vidhyashri Frontend Developer Portfolio</title>
+      <style>html {
+    width: 100%;
+    overflow-x: hidden;
+}</style>
+    </head>
+<body class="bg-[#082131] font-roboto text-white overflow-x-hidden">
+
+      <!-- Header Start -->
+<header class="fixed top-0 w-full z-50 bg-[#081c29]/80 backdrop-blur-md shadow-md">
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8">
+    <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 w-20 ">
+        <span class="sr-only">Your Company</span>
+       <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326 236" width="140" height="70">
+  <defs>
+    <!-- Soft gradient for strokes -->
+    <linearGradient id="gradStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#e0e0e0" stop-opacity="0.6"/>
+    </linearGradient>
+    <!-- Glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .flowOuter {
+        stroke-dasharray: 1600;
+        stroke-dashoffset: 0;
+        animation: flowOuter 8s linear infinite;
+      }
+      .flowInner {
+        stroke-dasharray: 1200;
+        stroke-dashoffset: 0;
+        animation: flowInner 10s linear infinite reverse;
+      }
+      @keyframes flowOuter { to { stroke-dashoffset: -3200; } }
+      @keyframes flowInner { to { stroke-dashoffset: -2400; } }
+
+      /* Shimmer effect */
+      .shine {
+        fill: url(#shineGrad);
+        animation: shineMove 5s linear infinite;
+      }
+      @keyframes shineMove {
+        0% { x: -200px; }
+        100% { x: 800px; }
+      }
+    </style>
+    <!-- Shimmer gradient -->
+    <linearGradient id="shineGrad" gradientUnits="userSpaceOnUse" x1="-200" y1="0" x2="200" y2="0">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+  <!-- Base outline -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        fill="none" stroke="#ddd" stroke-width="2" opacity="0.4">
+    VL
+  </text>
+  <!-- Outer bold animated stroke -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        fill="none" stroke="url(#gradStroke)" stroke-width="6"
+        class="flowOuter" filter="url(#glow)">
+    VL
+  </text>
+  <!-- Inner thin animated stroke -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        fill="none" stroke="url(#gradStroke)" stroke-width="2"
+        class="flowInner" filter="url(#glow)">
+    VL
+  </text>
+  <!-- Moving shine overlay -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        class="shine" stroke-width="0">
+    VL
+  </text>
+</svg>
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
+        <span class="sr-only">Open main menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <el-popover-group class="hidden lg:flex lg:gap-x-5  space-x-2">
+
+      <a href="#" class="font-medium text-white hover:text-cyan-400">About</a>
+      <a href="#" class="font-medium text-white hover:text-cyan-400">Skills</a>
+      <a href="#" class="font-medium text-white hover:text-cyan-400">Projects</a>
+       <a href="#" class="font-medium text-white hover:text-cyan-400">Contact</a>
+    </el-popover-group>
+  </nav>
+  <el-dialog>
+    <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#081c29]/80 backdrop-blur-md shadow-md p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5 w-20">
+              <span class="sr-only">Your Company</span>
+              <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326 236" width="140" height="70">
+  <defs>
+    <!-- Soft gradient for strokes -->
+    <linearGradient id="gradStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#e0e0e0" stop-opacity="0.6"/>
+    </linearGradient>
+    <!-- Glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .flowOuter {
+        stroke-dasharray: 1600;
+        stroke-dashoffset: 0;
+        animation: flowOuter 8s linear infinite;
+      }
+      .flowInner {
+        stroke-dasharray: 1200;
+        stroke-dashoffset: 0;
+        animation: flowInner 10s linear infinite reverse;
+      }
+      @keyframes flowOuter { to { stroke-dashoffset: -3200; } }
+      @keyframes flowInner { to { stroke-dashoffset: -2400; } }
+
+      /* Shimmer effect */
+      .shine {
+        fill: url(#shineGrad);
+        animation: shineMove 5s linear infinite;
+      }
+      @keyframes shineMove {
+        0% { x: -200px; }
+        100% { x: 800px; }
+      }
+    </style>
+    <!-- Shimmer gradient -->
+    <linearGradient id="shineGrad" gradientUnits="userSpaceOnUse" x1="-200" y1="0" x2="200" y2="0">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+  <!-- Base outline -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        fill="none" stroke="#ddd" stroke-width="2" opacity="0.4">
+    VL
+  </text>
+  <!-- Outer bold animated stroke -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        fill="none" stroke="url(#gradStroke)" stroke-width="6"
+        class="flowOuter" filter="url(#glow)">
+    VL
+  </text>
+  <!-- Inner thin animated stroke -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        fill="none" stroke="url(#gradStroke)" stroke-width="2"
+        class="flowInner" filter="url(#glow)">
+    VL
+  </text>
+  <!-- Moving shine overlay -->
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="200"
+        class="shine" stroke-width="0">
+    VL
+  </text>
+</svg>
+            </a>
+            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-white">
+              <span class="sr-only">Close menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="divide-y divide-gray-500/10">
+              <div class="py-3 text-xl">              
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2  text-white hover:text-cyan-400">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2  text-white hover:text-cyan-400">Marketplace</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2  text-white hover:text-cyan-400">Company</a>
+              </div>            
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+</header>
+ <!-- Header End -->
+    <!-- RIGHT SIDE SOCIAL SIDEBAR -->
+  <nav class="fixed top-1/3 right-0 z-50 ">
+    <ul class="space-y-3">
+      
+      <!-- Twitter -->
+      <li>
+        <a href="https://twitter.com/" target="_blank"
+           class="group flex items-center justify-start text-transparent hover:text-white w-[180px] translate-x-[140px] hover:translate-x-0 transition-all duration-500 rounded-l-full p-4 bg-black/30 backdrop-blur-sm shadow-lg hover:bg-[#55acee]">
+          <i class=" size-9 fa-brands fa-twitter bg-white text-black rounded-full p-2 transform transition-transform duration-700 group-hover:rotate-[360deg]">T</i>
+          <span class="pl-3 font-semibold ">Twitter</span>
+        </a>
+      </li>
+
+      <!-- Facebook -->
+      <li>
+        <a href="https://facebook.com/" target="_blank"
+           class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-[140px] hover:translate-x-0 transition-all duration-500 rounded-l-full pl-4 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#3b5999]">
+          <i class="size-9 fa-brands fa-facebook-f bg-white text-black rounded-full p-2 transform transition-transform duration-700 group-hover:rotate-[360deg]">F</i>
+          <span class="pl-3 font-semibold">Facebook</span>
+        </a>
+      </li>
+
+      <!-- Google Plus -->
+      <li>
+        <a href="https://plus.google.com/" target="_blank"
+           class="group flex items-center justify-start text-transparent hover:text-white w-[180px] translate-x-[140px] hover:translate-x-[0] transition-all duration-500 rounded-l-full pl-4 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#dd4b39]">
+          <i class="size-9 fa-brands fa-google-plus-g bg-white text-black rounded-full p-2 transform transition-transform duration-700 group-hover:rotate-[360deg]">G</i>
+          <span class="pl-3 font-semibold">Google+</span>
+        </a>
+      </li>
+
+      <!-- Instagram -->
+      <li>
+        <a href="https://instagram.com/" target="_blank"
+           class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-[140px] hover:translate-x-0 transition-all duration-500 rounded-l-full pl-4 pr-6 py-3 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 shadow-lg">
+          <i class="size-9 fa-brands fa-instagram bg-white text-black rounded-full p-2 transform transition-transform duration-700 group-hover:rotate-[360deg]"></i>
+          <span class="pl-3 font-semibold">Instagram</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+
+
+<div class="banner relative isolate h-screen min-h-96" data-aos="fade-in">
+<div class="relative isolate flex items-center justify-center overflow-hidden h-screen min-h-96 bg-[#081c29] py-24 sm:py-32">
+ <!-- <img src="img/vidhyashri-new1.jpg" alt="" class="absolute inset-0 z-0 size-full object-cover object-right md:object-center pointer-events-none" /> 
+   -->
+
+
+  <div data-aos="zoom-in-up" data-aos-delay="2000" class=" absolute top-0 left-auto right-auto w-6xl mx-auto">
+  <!-- Blurred Gradient Blobs -->
+<div class="absolute z-20 -top-2/6 left-auto -right-1/4 w-[500px] h-[500px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
+<div class="absolute z-20 top-20 left-0 w-[400px] h-[400px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse"></div>
+  <div class="absolute z-20 top-2/4 left-0 w-[600px] h-[600px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[180px]  animate-pulse" ></div></div>
+
+
+  <!-- <div id="" class="absolute top-0 left-0 pointer-events-none w-full h-full flex justify-center items-center z-10 opacity-30">
+<img src="img/bg-logo.png" alt="">
+  </div>  -->
+
+
+  <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center relative z-30">
+    
+  
+    <!-- Right Image with Neon Glow -->
+    <div class="flex justify-center">
+      <div class="relative " data-aos="zoom-in-up" data-aos-delay="1500">
+    <div class="relative size-52  rounded-full flex items-center justify-center border-[10px] border-transparent" style="    position: absolute;
+    bottom: 50px;
+    left: 21px;
+    z-index: 1;
+    width: 195px;"  data-aos="fade-in" data-aos-delay="2500" data-aos-easing="ease-in-sine">          <!-- Neon Glow Ring -->
+        
+          <!-- Image -->
+          <img src="img/Vidhyashri-love1c.png" alt="Profile"
+               class="w-full object-cover rounded-full  relative z-10 " />
+        </div>
+  <div class="absolute left-0 top-0 inset-0 rounded-full border-[10px] border-[#21e9fc]  " style="    width: 159px;
+    border-left: 0;
+    border-right: 0;
+    top: auto;
+    bottom: 30px;
+    height: 180px;
+    z-index: 2;
+    left: 36px;
+    border-top: 0;"></div>
+        <div class="animate-pulse">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="400" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">
+  <defs>
+
+    <!-- Ribbon gradients -->
+<linearGradient id="strokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ed0ff"></stop>
+      <stop offset="40%" stop-color="#10b7ff"></stop>
+      <stop offset="100%" stop-color="#7ff0ff"></stop>
+    </linearGradient>
+    <linearGradient id="thinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#dff9ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#bfefff" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="ribbonFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b1ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0ea3ff" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="28" result="blur1"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="48" result="blur2"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur1"></feMergeNode>
+        <feMergeNode in="blur2"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- Dynamic shadow filter -->
+    <filter id="shadow" x="-80%" y="-80%" width="260%" height="260%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Animations for layers -->
+    <style>
+      .flow1 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash1 10s linear infinite; }
+      .flow2 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash2 8s linear infinite reverse; }
+      .flow3 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash3 9s linear infinite; }
+      .flow4 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash4 7s linear infinite reverse; }
+      .flow5 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash5 11s linear infinite; }
+
+      @keyframes dash1 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash2 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash3 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash4 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash5 { to { stroke-dashoffset: -4000; } }
+    </style>
+  </defs>
+
+
+  <!-- Base fixed ribbon with glow + shadow -->
+<g filter="url(#glow)">
+    <path d="M160,1390
+         C120,980 240,620 530,450
+         C760,320 960,470 975,750
+         C1005,1210 800,1470 520,1595
+         C350,1675 220,1630 160,1390 Z" fill="none" stroke="url(#strokeGrad)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+  </g>
+
+  <!-- Flowing layers (animated with different speed & direction) -->
+  <path d="M200,1400
+     C180,1050 300,700 560,520
+     C740,420 920,540 935,780
+     C960,1150 780,1450 540,1560
+     C390,1628 260,1590 200,1400 Z"
+    fill="none" stroke="url(#ribbonFill)" stroke-width="22"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow1"/>
+
+  <path d="M180,1380
+     C140,1010 260,660 535,480
+     C757,360 955,500 970,760
+     C999,1160 820,1460 540,1580
+     C370,1658 240,1618 176,1380 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="6"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow2"/>
+
+  <path d="M190,1390
+     C150,1020 280,680 545,500
+     C760,370 940,520 950,770
+     C970,1180 790,1460 545,1570
+     C380,1635 250,1600 190,1390 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="5"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow3"/>
+
+  <path d="M170,1400
+     C130,1000 250,650 525,460
+     C750,350 950,500 970,780
+     C1000,1190 810,1470 525,1580
+     C350,1650 230,1600 170,1400 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="5"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow4"/>
+
+  <path d="M210,1410
+     C160,1020 270,690 550,480
+     C780,370 960,520 975,790
+     C995,1200 820,1470 550,1585
+     C370,1645 250,1605 210,1410 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="4"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow5"/>
+</svg>
+
+
+
+
+</div>
+    </div></div>
+  <!-- Left Text -->
+    <div>
+      <h3 class="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-sine">Hello, It's Me</h3>
+      <h1 class="text-4xl md:text-5xl font-bold text-[#21e9fc] mt-2"  data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-sine">
+        Vidhyashri Lovewanshi
+      </h1>
+      <h2 class="text-2xl md:text-3xl font-semibold mt-2 text-white" data-aos="fade-up" data-aos-delay="300"  data-aos-easing="ease-in-sine">
+        And I'm a <span id="typing" class="text-[#21e9fc]"></span>
+      </h2>
+      <p class="mt-4 text-gray-400 leading-relaxed" data-aos="fade-up" data-aos-delay="400"
+     data-aos-easing="ease-in-sine">
+        I'm a Frontend Developer with extensive experience in modern web development.  
+        Expertise in React, TailwindCSS, JavaScript, and UI/UX design.
+      </p>
+
+   
+
+       <!-- Buttons -->
+        <div class="mt-8 flex gap-4" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-in-sine">
+          <a id="aboutBtn" href="javascript:void(0);"
+             class="px-6 py-3 rounded-md bg-[#21e9fc] text-[#0b0f19] font-semibold hover:bg-cyan-400 transition">
+            About Me
+          </a>
+          <a href="#projects"
+             class="px-6 py-3 rounded-md border border-[#21e9fc] text-[#21e9fc] font-semibold hover:bg-[#21e9fc] hover:text-[#0b0f19] transition">
+            View Projects
+          </a>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- Popup Section -->
+<div id="aboutPopup" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+  <div id="popupContent" class="relative w-[90%] md:w-[70%] lg:w-[60%] bg-[#081c29] text-[#21e9fc] rounded-2xl shadow-2xl p-6 md:p-10 
+    transform scale-95 opacity-0 transition-all duration-300 ease-out">
+    
+    <!-- Close Button -->
+    <button id="closePopup" class="absolute top-4 right-4 text-[#21e9fc] hover:text-white transition">
+      ✕
+    </button>
+
+    <!-- About Me Content -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Text Section -->
+      <div>
+        <h2 class="text-3xl font-bold mb-4">ABOUT ME</h2>
+        <p class="mb-6 leading-relaxed text-[#c9f8ff]">
+          I help business owners and busy web developers to design &amp;
+          develop creative websites that fit their vision and attract
+          visitors. These are the technologies and tools I use:
+        </p>
+
+        <!-- Skills List -->
+        <ul class="flex flex-wrap gap-2 text-sm">
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#javascript</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#react.js</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#redux</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#node.js</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#express.js</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#mongoDB</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#tailwind</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#git</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#github</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#aws</li>
+          <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#figma</li>
+        </ul>
+
+        <!-- MERN Stack Icons -->
+        <h3 class="text-2xl font-semibold mt-8 mb-4">MERN STACK</h3>
+        <div class="flex gap-6 items-center">
+          <div class="flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" class="w-12 h-12">
+            <span class="text-sm mt-2">MongoDB</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" class="w-12 h-12">
+            <span class="text-sm mt-2">Express</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" class="w-12 h-12">
+            <span class="text-sm mt-2">React</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" class="w-12 h-12">
+            <span class="text-sm mt-2">Node.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <div class="flex items-center justify-center">
+        <img src="/images/coder.svg" alt="coder illustration" class="max-h-[300px]">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const aboutBtn = document.getElementById('aboutBtn');
+  const aboutPopup = document.getElementById('aboutPopup');
+  const popupContent = document.getElementById('popupContent');
+  const closePopup = document.getElementById('closePopup');
+
+  aboutBtn.addEventListener('click', () => {
+    aboutPopup.classList.remove('hidden');
+    setTimeout(() => {
+      popupContent.classList.remove('scale-95', 'opacity-0');
+      popupContent.classList.add('scale-100', 'opacity-100');
+    }, 10);
+  });
+
+  closePopup.addEventListener('click', () => {
+    popupContent.classList.remove('scale-100', 'opacity-100');
+    popupContent.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+      aboutPopup.classList.add('hidden');
+    }, 300);
+  });
+</script>
+<section id="about" class="relative  py-20 ">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left (Image) -->
+    <div class="flex justify-center" data-aos="fade-left">
+      <div class="relative w-96">
+        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-teal-400 blur-3xl opacity-40 animate-pulse"></div>
+        <img src="img/vidhyashri-new11.jpg" alt="About Me" 
+             class="relative z-10 w-full  object-cover rounded-2xl shadow-xl border-4 border-cyan-400/30">
+      </div>
+    </div>
+
+    <!-- Right (Content) -->
+    <div class="space-y-6" data-aos="fade-right">
+      <h2 class="text-3xl font-bold">About <span class="text-cyan-400">Me</span></h2>
+      <p class="text-gray-300 leading-relaxed">
+        I’m <span class="text-cyan-300 font-semibold">Vidhyashri Lovewanshi</span>, a passionate 
+        <span class="text-teal-300 font-semibold">Frontend Developer</span> with 10+ years of experience 
+        building modern, responsive, and user-friendly web applications.  
+      </p>
+      <p class="text-gray-400 leading-relaxed">
+        I specialize in <span class="text-cyan-300">React</span>, 
+        <span class="text-cyan-300">JavaScript (ES6+)</span>, and 
+        <span class="text-cyan-300">TailwindCSS</span>.  
+        I love turning ideas into interactive, accessible, and high-performance products.
+      </p>
+
+      <!-- Info List -->
+      <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
+        <p><span class="text-cyan-400">Name:</span> Vidhyashri</p>
+        <p><span class="text-cyan-400">Role:</span> Frontend Developer</p>
+        <p><span class="text-cyan-400">Experience:</span> 10+ Years</p>
+        <p><span class="text-cyan-400">Location:</span> India</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-4 pt-4">
+        <a href="#contact" class="px-6 py-3 rounded-lg bg-cyan-400 text-black font-semibold shadow-lg hover:-translate-y-1 hover:shadow-cyan-400/60 transition">Hire Me</a>
+        <a href="resume.pdf" class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-300 font-semibold hover:bg-cyan-400 hover:text-black transition">Download CV</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Skills -->  <style>
+    /* default: progress bar hidden (width:0) — will expand when AOS adds .aos-animate */
+    .bar { width: 0; }
+
+    /* animate width to custom --w when parent gets aos-animate */
+    .aos-animate .bar {
+      width: var(--w);
+      transition: width 1400ms cubic-bezier(.2,.9,.3,1);
+    }
+
+    /* circle initial dashoffset (full circle) */
+    .circle {
+      stroke-dasharray: 251;
+      stroke-dashoffset: 251;
+      transition: stroke-dashoffset 1400ms cubic-bezier(.2,.9,.3,1);
+      transform-origin: 50% 50%;
+      transform: rotate(-90deg);
+    }
+
+    /* when parent visible, animate to --dash value */
+    .aos-animate .circle {
+      stroke-dashoffset: var(--dash);
+    }
+
+    /* small style so numbers are centered */
+    .circle-label { transform: translateY(-2px); }
+  </style>
+  <section class="py-16 px-6 bg-[#0d2f42]">
+
+   <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-400">Skills</span></h2>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- Left: Technical -->
+      <div data-aos="fade-up">
+        <h3 class="text-2xl font-semibold mb-6"  >Technical Skills</h3>
+
+        <!-- HTML -->
+        <div data-aos="fade-right" class="mb-6">
+          <div class="flex justify-between mb-1">
+            <span>HTML</span><span>90%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+            <!-- set --w to target width -->
+            <div class="bar bg-cyan-400 h-2 rounded-full" style="--w:90%"></div>
+          </div>
+        </div>
+
+        <!-- CSS -->
+        <div data-aos="fade-right" data-aos-delay="100" class="mb-6">
+          <div class="flex justify-between mb-1">
+            <span>CSS</span><span>60%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bar bg-cyan-400 h-2 rounded-full" style="--w:60%"></div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div data-aos="fade-right" data-aos-delay="200" class="mb-6">
+          <div class="flex justify-between mb-1">
+            <span>JavaScript</span><span>85%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bar bg-cyan-400 h-2 rounded-full" style="--w:85%"></div>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div data-aos="fade-right" data-aos-delay="300" class="mb-6">
+          <div class="flex justify-between mb-1">
+            <span>Python</span><span>50%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bar bg-cyan-400 h-2 rounded-full" style="--w:50%"></div>
+          </div>
+        </div>
+
+        <!-- React -->
+        <div data-aos="fade-right" data-aos-delay="400" class="mb-6">
+          <div class="flex justify-between mb-1">
+            <span>React</span><span>75%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bar bg-cyan-400 h-2 rounded-full" style="--w:75%"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Professional (circular) -->
+      <div data-aos="fade-up">
+        <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
+
+        <div class="grid grid-cols-2 gap-8">
+
+          <!-- Creativity 90% -->
+          <div data-aos="zoom-in" class="flex flex-col items-center">
+            <div class="relative w-24 h-24">
+              <svg viewBox="0 0 100 100" class="w-24 h-24">
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="text-gray-700 fill-transparent" fill="transparent"/>
+                <!-- circle stroke uses CSS var --dash -->
+                <!-- for 90%: dashoffset = circumference*(1-0.9) ≈ 25 -->
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="circle text-cyan-400 fill-transparent" style="--dash:25"></circle>
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">90%</span>
+            </div>
+            <p class="mt-2">Creativity</p>
+          </div>
+
+          <!-- Communication 65% -->
+          <div data-aos="zoom-in" data-aos-delay="100" class="flex flex-col items-center">
+            <div class="relative w-24 h-24">
+              <svg viewBox="0 0 100 100" class="w-24 h-24">
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="text-gray-700 fill-transparent" fill="transparent"/>
+                <!-- 65% -> dash ≈ 251*(1-0.65)=~88 -->
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="circle text-cyan-400 fill-transparent" style="--dash:88"></circle>
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">65%</span>
+            </div>
+            <p class="mt-2">Communication</p>
+          </div>
+
+          <!-- Problem Solving 75% -->
+          <div data-aos="zoom-in" data-aos-delay="200" class="flex flex-col items-center">
+            <div class="relative w-24 h-24">
+              <svg viewBox="0 0 100 100" class="w-24 h-24">
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="text-gray-700 fill-transparent" fill="transparent"/>
+                <!-- 75% -> dash ≈ 251*(1-0.75)=~63 -->
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="circle text-cyan-400 fill-transparent" style="--dash:63"></circle>
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">75%</span>
+            </div>
+            <p class="mt-2">Problem Solving</p>
+          </div>
+
+          <!-- Teamwork 85% -->
+          <div data-aos="zoom-in" data-aos-delay="300" class="flex flex-col items-center">
+            <div class="relative w-24 h-24">
+              <svg viewBox="0 0 100 100" class="w-24 h-24">
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="text-gray-700 fill-transparent" fill="transparent"/>
+                <!-- 85% -> dash ≈ 251*(1-0.85)=~38 -->
+                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor" class="circle text-cyan-400 fill-transparent" style="--dash:38"></circle>
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">85%</span>
+            </div>
+            <p class="mt-2">Teamwork</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <!-- Projects -->
+<section id="projects" class="bg-[#021b27] py-20 text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12">
+      My <span class="text-cyan-400">Projects</span>
+    </h2>
+
+    <!-- Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <div data-aos="fade-right" class="relative group overflow-hidden rounded-xl bg-[#042c3d] shadow-lg">
+        <img src="https://picsum.photos/500/300" alt="Project 1"
+             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
+          <h3 class="text-lg font-semibold">Portfolio Website</h3>
+          <p class="text-gray-300 text-sm">Personal responsive portfolio with React & Tailwind.</p>
+          <a href="#" class="mt-3 inline-block px-4 py-2 rounded-md bg-cyan-400 text-black font-semibold hover:bg-cyan-300">
+            View Project
+          </a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div data-aos="fade-up" data-aos-delay="200" class="relative group overflow-hidden rounded-xl bg-[#042c3d] shadow-lg">
+        <img src="https://picsum.photos/500/301" alt="Project 2"
+             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
+          <h3 class="text-lg font-semibold">E-commerce App</h3>
+          <p class="text-gray-300 text-sm">Modern shopping app UI with payment integration.</p>
+          <a href="#" class="mt-3 inline-block px-4 py-2 rounded-md bg-cyan-400 text-black font-semibold hover:bg-cyan-300">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-aos="fade-left" data-aos-delay="400" class="relative group overflow-hidden rounded-xl bg-[#042c3d] shadow-lg">
+        <img src="https://picsum.photos/500/302" alt="Project 3"
+             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
+          <h3 class="text-lg font-semibold">Dashboard UI</h3>
+          <p class="text-gray-300 text-sm">Interactive dashboard with charts & analytics.</p>
+          <a href="#" class="mt-3 inline-block px-4 py-2 rounded-md bg-cyan-400 text-black font-semibold hover:bg-cyan-300">
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact -->
+
+<section id="contact" class="relative bg-[#0d2f42] py-20 text-white">
+  <div class="max-w-3xl mx-auto px-6 text-center">    
+    <!-- Left side -->
+    <div class="space-y-6" data-aos="fade-up">
+      <h2 class="text-3xl font-bold">Contact <span class="text-cyan-400">Me</span></h2>
+      <p class="text-gray-300">
+        Let's Work Together! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Dolorum cupiditate deleniti perspiciatis repellat.
+      </p>
+      <p >
+       <i class="fa-solid fa-envelope text-cyan-400"></i>
+          contact@gmail.com
+        </p>
+       
+  
+
+      <!-- Social Icons -->
+      <div class="flex justify-center gap-4 pt-4" >
+        <a href="#" class="p-3 bg-[#042c3d] rounded-full border border-cyan-600/40 hover:bg-cyan-400 hover:text-black transition">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="p-3 bg-[#042c3d] rounded-full border border-cyan-600/40 hover:bg-cyan-400 hover:text-black transition">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="p-3 bg-[#042c3d] rounded-full border border-cyan-600/40 hover:bg-cyan-400 hover:text-black transition">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="p-3 bg-[#042c3d] rounded-full border border-cyan-600/40 hover:bg-cyan-400 hover:text-black transition">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-[#081c29] text-center text-[#7af7ff]">
+    © 2025 Vidhyashri Lovewanshi. All rights reserved.
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="hidden fixed bottom-6 right-6 bg-gradient-to-r from-[#21e9fc] to-[#1994a3] text-[#081c29] p-4 rounded-full shadow-lg hover:scale-110 transition">
+    ↑
+  </button>
+    <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
+<script>AOS.init({
+  duration: 1200, delay: 200
+})</script>
+</body>
+</html>
