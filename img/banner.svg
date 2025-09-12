@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="400" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">
+  <defs>
+
+    <!-- Ribbon gradients -->
+<linearGradient id="strokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ed0ff"></stop>
+      <stop offset="40%" stop-color="#10b7ff"></stop>
+      <stop offset="100%" stop-color="#7ff0ff"></stop>
+    </linearGradient>
+    <linearGradient id="thinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#dff9ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#bfefff" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="ribbonFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b1ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0ea3ff" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="28" result="blur1"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="48" result="blur2"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur1"></feMergeNode>
+        <feMergeNode in="blur2"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- Dynamic shadow filter -->
+    <filter id="shadow" x="-80%" y="-80%" width="260%" height="260%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Animations for layers -->
+    <style>
+      .flow1 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash1 10s linear infinite; }
+      .flow2 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash2 8s linear infinite reverse; }
+      .flow3 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash3 9s linear infinite; }
+      .flow4 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash4 7s linear infinite reverse; }
+      .flow5 { stroke-dasharray: 2000; stroke-dashoffset: 0; animation: dash5 11s linear infinite; }
+
+      @keyframes dash1 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash2 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash3 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash4 { to { stroke-dashoffset: -4000; } }
+      @keyframes dash5 { to { stroke-dashoffset: -4000; } }
+    </style>
+  </defs>
+
+
+  <!-- Base fixed ribbon with glow + shadow -->
+<g filter="url(#glow)">
+    <path d="M160,1390
+         C120,980 240,620 530,450
+         C760,320 960,470 975,750
+         C1005,1210 800,1470 520,1595
+         C350,1675 220,1630 160,1390 Z" fill="none" stroke="url(#strokeGrad)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+  </g>
+
+  <!-- Flowing layers (animated with different speed & direction) -->
+  <path d="M200,1400
+     C180,1050 300,700 560,520
+     C740,420 920,540 935,780
+     C960,1150 780,1450 540,1560
+     C390,1628 260,1590 200,1400 Z"
+    fill="none" stroke="url(#ribbonFill)" stroke-width="22"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow1"/>
+
+  <path d="M180,1380
+     C140,1010 260,660 535,480
+     C757,360 955,500 970,760
+     C999,1160 820,1460 540,1580
+     C370,1658 240,1618 176,1380 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="6"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow2"/>
+
+  <path d="M190,1390
+     C150,1020 280,680 545,500
+     C760,370 940,520 950,770
+     C970,1180 790,1460 545,1570
+     C380,1635 250,1600 190,1390 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="5"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow3"/>
+
+  <path d="M170,1400
+     C130,1000 250,650 525,460
+     C750,350 950,500 970,780
+     C1000,1190 810,1470 525,1580
+     C350,1650 230,1600 170,1400 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="5"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow4"/>
+
+  <path d="M210,1410
+     C160,1020 270,690 550,480
+     C780,370 960,520 975,790
+     C995,1200 820,1470 550,1585
+     C370,1645 250,1605 210,1410 Z"
+    fill="none" stroke="url(#thinGrad)" stroke-width="4"
+    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow) url(#shadow)" class="flow5"/>
+</svg>
