@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="img/black-logo4.png">
   <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'>
   <link href="src/output.css" rel="stylesheet">
-  <title>Vidhyashri Frontend Developer Portfolio</title>
+  <title>Vidhyashri Frontend Developer</title>
 </head>
 
 <body class="bg-[#082131] font-roboto text-white overflow-x-hidden">
@@ -32,9 +32,9 @@
       </div>
       <el-popover-group class="hidden lg:flex lg:gap-x-5  space-x-2">
         <a href="#about" class="font-medium text-white hover:text-cyan-300">About</a>
-        <a href="#" class="font-medium text-white hover:text-cyan-300">Skills</a>
-        <a href="#" class="font-medium text-white hover:text-cyan-300">Projects</a>
-        <a href="#" class="font-medium text-white hover:text-cyan-300">Contact</a>
+        <a href="#Skills" class="font-medium text-white hover:text-cyan-300">Skills</a>
+        <a href="#my-works" class="font-medium text-white hover:text-cyan-300">Work</a>
+        <a href="#contact" class="font-medium text-white hover:text-cyan-300">Contact</a>
       </el-popover-group>
     </nav>
     <el-dialog>
@@ -58,9 +58,16 @@
             <div class="mt-6 flow-root">
               <div class="divide-y divide-gray-500/10">
                 <div class="py-3 text-xl">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Features</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Marketplace</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Company</a>
+                  <a href="#about"> <button type="button" command="close" commandfor="mobile-menu"
+                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">About
+                    </button></a>
+                  <a href="#Skills"> <button type="button" command="close" commandfor="mobile-menu"
+                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Skills
+                    </button></a>
+                  <a href="#my-works"> <button type="button" command="close" commandfor="mobile-menu"
+                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Work</button></a>
+                  <a href="#contact"> <button type="button" command="close" commandfor="mobile-menu"
+                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Contact</button></a>
                 </div>
               </div>
             </div>
@@ -349,7 +356,7 @@
       transform: translateY(-2px);
     }
   </style>
-  <section id="" Skills class="py-16 px-6 ">
+  <section id="Skills" class="py-16 px-6 ">
 
     <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-300">Skills</span>
     </h2>
@@ -493,7 +500,7 @@
     </div>
   </section>
   <!-- Latest Work -->
-  <section id="latest-works" class="bg-[#0d2f42] py-20">
+  <section id="my-works" class="bg-[#0d2f42] py-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-300">Work</span>
       </h2>
@@ -637,8 +644,6 @@
   <!-- Typing Animation -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="src/custom.js"></script>
-
-
 </body>
 
 </html>
