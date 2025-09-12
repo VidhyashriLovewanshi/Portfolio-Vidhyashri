@@ -1,0 +1,83 @@
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326 236" width="140" height="70">
+            <defs>
+              <!-- Soft gradient for strokes -->
+              <linearGradient id="gradStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#e0e0e0" stop-opacity="0.6" />
+              </linearGradient>
+              <!-- Glow -->
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <style>
+                .flowOuter {
+                  stroke-dasharray: 1600;
+                  stroke-dashoffset: 0;
+                  animation: flowOuter 8s linear infinite;
+                }
+
+                .flowInner {
+                  stroke-dasharray: 1200;
+                  stroke-dashoffset: 0;
+                  animation: flowInner 10s linear infinite reverse;
+                }
+
+                @keyframes flowOuter {
+                  to {
+                    stroke-dashoffset: -3200;
+                  }
+                }
+
+                @keyframes flowInner {
+                  to {
+                    stroke-dashoffset: -2400;
+                  }
+                }
+
+                /* Shimmer effect */
+                .shine {
+                  fill: url(#shineGrad);
+                  animation: shineMove 5s linear infinite;
+                }
+
+                @keyframes shineMove {
+                  0% {
+                    x: -200px;
+                  }
+
+                  100% {
+                    x: 800px;
+                  }
+                }
+              </style>
+              <!-- Shimmer gradient -->
+              <linearGradient id="shineGrad" gradientUnits="userSpaceOnUse" x1="-200" y1="0" x2="200" y2="0">
+                <stop offset="0%" stop-color="transparent" />
+                <stop offset="50%" stop-color="white" stop-opacity="0.7" />
+                <stop offset="100%" stop-color="transparent" />
+              </linearGradient>
+            </defs>
+            <!-- Base outline -->
+            <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" fill="none" stroke="#ddd"
+              stroke-width="2" opacity="0.4">
+              VL
+            </text>
+            <!-- Outer bold animated stroke -->
+            <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" fill="none" stroke="url(#gradStroke)"
+              stroke-width="6" class="flowOuter" filter="url(#glow)">
+              VL
+            </text>
+            <!-- Inner thin animated stroke -->
+            <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" fill="none" stroke="url(#gradStroke)"
+              stroke-width="2" class="flowInner" filter="url(#glow)">
+              VL
+            </text>
+            <!-- Moving shine overlay -->
+            <text x="50" y="200" font-family="Arial, sans-serif" font-size="200" class="shine" stroke-width="0">
+              VL
+            </text>
+          </svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400" fill="none" stroke-width="20">
+
+<style>
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+</style>
+
+  <!-- Default static layer -->
+  <path d="M100 20 L180 140 H130 V360 H70 V140 H20 Z"
+        stroke="rgba(255, 255, 255, 0.36)" />
+
+  <!-- Animated layer 1 -->
+  <path d="M100 20 L180 140 H130 V360 H70 V140 H20 Z"
+        stroke="white"
+        stroke-dasharray="1000"
+        stroke-dashoffset="1000"
+        style="animation: draw 3s ease-in-out infinite alternate;" />
+
+  <!-- Animated layer 2 (delay + cyan) -->
+  <path d="M100 20 L180 140 H130 V360 H70 V140 H20 Z"
+        stroke="cyan"
+        stroke-dasharray="1000"
+        stroke-dashoffset="1000"
+        style="animation: draw 3s ease-in-out infinite alternate 1.5s;" />
+</svg>

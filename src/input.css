@@ -13,13 +13,19 @@
 }
 */
 
-    
-@import "tailwindcss";  
+
+@import "tailwindcss";
 
 @theme {
-  --font-roboto: "Roboto", "sans-serif";   
-/*  --font-roboto1: "Roboto bold"; */
+  --font-roboto: "Roboto", "sans-serif";
+  /*  --font-roboto1: "Roboto bold"; */
 }
+
 /* D:\vidhyashri\html\html-installation */
 /*https://www.canva.com/design/DAGx5pVJflk/e8-D4knIFaIwsrox8UHF5Q/edit*/
 /*npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch*/
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
