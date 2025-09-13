@@ -11,634 +11,650 @@
 </head>
 
 <body class="bg-[#082131] font-roboto text-white overflow-x-hidden">
-  <!-- Header Start -->
-  <header class="fixed top-0 w-full z-50 bg-[#081c29]/80 backdrop-blur-md shadow-md">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8">
-      <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 w-20 ">
-          <span class="sr-only">Your Company</span>
-          <img src="img/vl-logo.svg" alt="">
-        </a>
-      </div>
-      <div class="flex lg:hidden">
-        <button type="button" command="show-modal" commandfor="mobile-menu"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
-          <span class="sr-only">Open main menu</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-            aria-hidden="true" class="size-6">
-            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-      <el-popover-group class="hidden lg:flex lg:gap-x-5  space-x-2">
-        <a href="#about" class="font-medium text-white hover:text-cyan-300">About</a>
-        <a href="#Skills" class="font-medium text-white hover:text-cyan-300">Skills</a>
-        <a href="#my-works" class="font-medium text-white hover:text-cyan-300">Work</a>
-        <a href="#contact" class="font-medium text-white hover:text-cyan-300">Contact</a>
-      </el-popover-group>
-    </nav>
-    <el-dialog>
-      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-        <div tabindex="0" class="fixed inset-0 focus:outline-none">
-          <el-dialog-panel
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#081c29]/80 backdrop-blur-md shadow-md p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5 w-20">
-                <span class="sr-only">Your Company</span>
-                <img src="img/vl-logo.svg" alt="">
-              </a>
-              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-white">
-                <span class="sr-only">Close menu</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                  aria-hidden="true" class="size-6">
-                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="divide-y divide-gray-500/10">
-                <div class="py-3 text-xl">
-                  <a href="#about"> <button type="button" command="close" commandfor="mobile-menu"
-                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">About
-                    </button></a>
-                  <a href="#Skills"> <button type="button" command="close" commandfor="mobile-menu"
-                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Skills
-                    </button></a>
-                  <a href="#my-works"> <button type="button" command="close" commandfor="mobile-menu"
-                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Work</button></a>
-                  <a href="#contact"> <button type="button" command="close" commandfor="mobile-menu"
-                      class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Contact</button></a>
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 flex items-center justify-center bg-gray-900 z-50">
+    <div class="w-24 h-24 rounded-full border-4 border-transparent border-t-cyan-300 backdrop-blur-md loader-circle">
+    </div>
+  </div>
+
+  <div id="main-page">
+    <!-- Header Start -->
+    <header class="fixed top-0 w-full z-50 bg-[#081c29]/80 backdrop-blur-md shadow-md">
+      <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 w-20 ">
+            <span class="sr-only">Your Company</span>
+            <img src="img/vl-logo.svg" alt="">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" command="show-modal" commandfor="mobile-menu"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
+            <span class="sr-only">Open main menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+              aria-hidden="true" class="size-6">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <el-popover-group class="hidden lg:flex lg:gap-x-5  space-x-2">
+          <a href="#about" class="font-medium text-white hover:text-cyan-300">About</a>
+          <a href="#Skills" class="font-medium text-white hover:text-cyan-300">Skills</a>
+          <a href="#my-works" class="font-medium text-white hover:text-cyan-300">Work</a>
+          <a href="#contact" class="font-medium text-white hover:text-cyan-300">Contact</a>
+        </el-popover-group>
+      </nav>
+      <el-dialog>
+        <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+          <div tabindex="0" class="fixed inset-0 focus:outline-none">
+            <el-dialog-panel
+              class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#081c29]/80 backdrop-blur-md shadow-md p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5 w-20">
+                  <span class="sr-only">Your Company</span>
+                  <img src="img/vl-logo.svg" alt="">
+                </a>
+                <button type="button" command="close" commandfor="mobile-menu"
+                  class="-m-2.5 rounded-md p-2.5 text-white">
+                  <span class="sr-only">Close menu</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                    aria-hidden="true" class="size-6">
+                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-6 flow-root">
+                <div class="divide-y divide-gray-500/10">
+                  <div class="py-3 text-xl">
+                    <a href="#about"> <button type="button" command="close" commandfor="mobile-menu"
+                        class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">About
+                      </button></a>
+                    <a href="#Skills"> <button type="button" command="close" commandfor="mobile-menu"
+                        class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Skills
+                      </button></a>
+                    <a href="#my-works"> <button type="button" command="close" commandfor="mobile-menu"
+                        class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Work</button></a>
+                    <a href="#contact"> <button type="button" command="close" commandfor="mobile-menu"
+                        class="block rounded-lg px-3 py-2  text-white hover:text-cyan-300">Contact</button></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </el-dialog-panel>
-        </div>
-      </dialog>
-    </el-dialog>
-  </header>
-  <!-- Header End -->
-  <!-- RIGHT SIDE SOCIAL SIDEBAR -->
-  <nav class="fixed top-1/3 right-0 z-50 hidden md:block ">
-    <ul class="space-y-2">
-      <!-- Linkedin -->
-      <li>
-        <a href="https://www.linkedin.com/in/vidhyashri-lovewanshi-20b8a399/" target="_blank"
-          class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#0A66C2]">
-          <div
-            class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
-            <img class="w-full h-full  object-contain border " src="img/linkedin-2.gif" alt="">
+            </el-dialog-panel>
           </div>
-          <span class="pl-3 font-semibold">Linkedin</span>
-        </a>
-      </li>
-      <!-- Twitter -->
-      <li>
-        <a href="https://x.com/VLovewanshi99?t=iMHIDLQWzcxUyZHqMcdq3w&s=08" target="_blank"
-          class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#3b5999]">
-          <div
-            class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
-            <img class="w-full h-full  object-contain border " src="img/twitter.svg" alt="">
-          </div>
-          <span class="pl-3 font-semibold">Twitter</span>
-        </a>
-      </li>
-      <!-- Google Plus -->
-      <li>
-        <a href="https://www.instagram.com/vidyashrilovewanshi?igsh=aDFsN3R0MDdqMDIw" target="_blank"
-          class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 ">
-          <div
-            class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
-            <img class="w-full h-full  object-contain  " src="img/instagram.svg" alt="">
-          </div>
-          <span class="pl-3 font-semibold">Instagram</span>
-        </a>
-      </li>
-
-      <!-- Facebook -->
-      <li>
-        <a href="https://www.facebook.com/share/1GGhNBEYas/" target="_blank"
-          class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#3b5999]">
-          <div
-            class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
-            <img class="w-full h-full  object-contain border " src="img/facebook.svg" alt="">
-          </div>
-          <span class="pl-3 font-semibold">Facebook</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="banner relative isolate md:h-screen min-h-96  max-h-[1100px]" data-aos="fade-in">
-    <div
-      class="relative isolate flex items-center justify-center overflow-hidden md:h-screen min-h-96 max-h-[1100px] bg-[#081c29] py-24 md:py-32 pt-7 md:pt-32">
-      <div data-aos="zoom-in-up" data-aos-delay="2000" class=" absolute top-0 left-auto right-auto w-6xl mx-auto">
-        <!-- Blurred Gradient Blobs -->
-        <div
-          class="absolute z-20 -top-2/6 left-auto -right-1/4 w-[500px] h-[500px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse">
-        </div>
-        <div
-          class="absolute z-20 top-20 left-0 w-[400px] h-[400px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse">
-        </div>
-        <div
-          class="absolute z-20 top-2/4 left-0 w-1/2 h-[600px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[180px]  animate-pulse">
-        </div>
-      </div>
-      <div class="max-w-6xl w-full grid md:grid-cols-12 lg:grid-cols-2 md:gap-10 items-center relative z-30 px-6">
-        <!-- left Image with Neon Glow -->
-        <div class="flex justify-center md:col-span-4 lg:col-span-1 ">
-          <div class="relative " data-aos="zoom-in-up" data-aos-delay="1500">
+        </dialog>
+      </el-dialog>
+    </header>
+    <!-- Header End -->
+    <!-- RIGHT SIDE SOCIAL SIDEBAR -->
+    <nav class="fixed top-1/3 right-0 z-50 hidden md:block ">
+      <ul class="space-y-2">
+        <!-- Linkedin -->
+        <li>
+          <a href="https://www.linkedin.com/in/vidhyashri-lovewanshi-20b8a399/" target="_blank"
+            class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#0A66C2]">
             <div
-              class="absolute w-44 bottom-12 left-10  rounded-full flex items-center rounded-[92px 54px] overflow-hidden justify-center  border-transparent -z-[1] "
-              data-aos="fade-in" data-aos-delay="2500" data-aos-easing="ease-in-sine">
-              <!-- Image -->
-              <img src="img/Vidhyashri-love1c.png" alt="Profile" class="w-full object-cover" />
+              class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
+              <img class="w-full h-full  object-contain border " src="img/linkedin-2.gif" alt="">
             </div>
-
-            <div class="animate-pulse"> <img src="img/banner.svg" alt=""></div>
-          </div>
-        </div>
-        <!-- right Text -->
-        <div class="md:col-span-8 lg:col-span-1">
-          <h3 class="text-lg md:text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100"
-            data-aos-easing="ease-in-sine">
-            Hello, It's Me</h3>
-          <h1 class="text-2xl md:text-4xl  xl:text-5xl font-bold text-cyan-300 mt-2" data-aos="fade-up"
-            data-aos-delay="200" data-aos-easing="ease-in-sine">
-            Vidhyashri Lovewanshi
-          </h1>
-          <h2 class="text-xl md:text-2xl xl:text-3xl font-semibold mt-2 text-white" data-aos="fade-up"
-            data-aos-delay="300" data-aos-easing="ease-in-sine">
-            And I'm a <span id="typing" class="text-cyan-300"></span>
-          </h2>
-          <p class="mt-4 text-gray-400 leading-relaxed text-sm md:text-base" data-aos="fade-up" data-aos-delay="400"
-            data-aos-easing="ease-in-sine">
-            👉 “Frontend Developer specializing in
-            <span class="text-gray-100 font-medium">React.js</span> and
-            <span class="text-gray-200 font-medium">TailwindCSS</span>,
-            crafting
-            <span class="text-gray-100 font-medium">Pixel-Perfect UIs</span> with
-            <span class="text-gray-200 font-medium">Clean, Maintainable Code</span>.
-            Leveraging <span class="text-gray-100 font-medium">JavaScript</span> and
-            <span class="text-gray-200 font-medium">modern tools (AI)</span> for faster,
-            scalable, and high-quality web development.”
-          </p>
-          <!-- Buttons -->
-          <div class="mt-8 flex gap-4" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-in-sine">
-            <a href="javascript:void(0);"
-              class="open-about px-6 py-3 rounded-md border border-cyan-300 text-[#0b0f19] font-semibold  bg-[radial-gradient(circle_at_center,_#a5f3fc,_#22d3ee,_#06b6d4)]  bg-[length:150%_150%] bg-[position:center]  hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50 transition-[background-position,box-shadow] duration-700 ease-in-out">
-              About Me
-            </a>
-            <a target="_blank" href="vidhyashri-ui-developer-resume.pdf"
-              class="px-6 py-3 rounded-md border border-cyan-300 text-white font-semibold bg-[radial-gradient(circle_at_center,_#0d4053,_#082131,_#4ea4b1)] bg-[length:150%_150%] bg-[position:center] hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50  transition-[background-position,box-shadow] duration-700 ease-in-out">
-              Download CV
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Popup Section -->
-  <div id="aboutPopup" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-    <div id="popupContent"
-      class="relative w-[90%] md:w-[80%] 2xl:w-[60%]  bg-[#081c29] text-cyan-300 rounded-2xl shadow-2xl p-6 md:p-10 transform scale-95 opacity-0 transition-all duration-300 ease-out max-h-screen overflow-x-hidden overflow-y-auto">
-
-      <!-- Close Button -->
-      <button id="closePopup" class="absolute top-4 right-4 text-cyan-300 hover:text-white transition cursor-pointer">
-        ✕
-      </button>
-
-      <!-- About Me Content -->
-      <div class="grid md:grid-cols-2 gap-4 text-sm">
-        <!-- Text Section -->
-        <div>
-          <h2 class="text-3xl font-bold text-white">About <span class="text-cyan-300">Me</span></h2>
-          <p class="mb-6 leading-relaxed text-[#c9f8ff] ">
-            I am a professional Frontend Developer with expertise in creating modern, responsive, and creative web
-            applications.
-            I focus on clean code, pixel-perfect designs, and building websites that are visually appealing and
-            user-friendly.
-            Here are the tools and technologies I use:
-          </p>
-
-          <!-- Skills List -->
-          <ul class="flex flex-wrap gap-2 text-xs mb-6">
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#HTML5</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#CSS3 / SCSS</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#JavaScript (ES6+)</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#React.js</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Tailwind CSS</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#React Router</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Axios / Fetch API</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Framer Motion / AOS</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Responsive Design</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Clean Code</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#UI/UX Design</li>
-            <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Git & GitHub</li>
-          </ul>
-
-          <!-- Frontend Tools Icons -->
-          <h3 class="text-2xl font-semibold mt-6 mb-4 text-white">FRONTEND <span class="text-cyan-300">TOOLS</span></h3>
-          <div class="flex gap-3 items-center flex-wrap">
-            <div class="flex flex-col items-center">
-              <img src="img/react.svg" class="size-8">
-              <span class="text-sm mt-2">React.js</span>
+            <span class="pl-3 font-semibold">Linkedin</span>
+          </a>
+        </li>
+        <!-- Twitter -->
+        <li>
+          <a href="https://x.com/VLovewanshi99?t=iMHIDLQWzcxUyZHqMcdq3w&s=08" target="_blank"
+            class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#3b5999]">
+            <div
+              class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
+              <img class="w-full h-full  object-contain border " src="img/twitter.svg" alt="">
             </div>
-            <div class="flex flex-col items-center">
-              <img src="img/tailwindcss.svg" class="size-8">
-              <span class="text-sm mt-2">Tailwind CSS</span>
+            <span class="pl-3 font-semibold">Twitter</span>
+          </a>
+        </li>
+        <!-- Google Plus -->
+        <li>
+          <a href="https://www.instagram.com/vidyashrilovewanshi?igsh=aDFsN3R0MDdqMDIw" target="_blank"
+            class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 ">
+            <div
+              class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
+              <img class="w-full h-full  object-contain  " src="img/instagram.svg" alt="">
             </div>
-            <div class="flex flex-col items-center">
-              <img src="img/javascript.svg" class="size-8">
-              <span class="text-sm mt-2">JavaScript</span>
-            </div>
-            <div class="flex flex-col items-center">
-              <img src="img/git.svg" class="size-8">
-              <span class="text-sm mt-2">Git</span>
-            </div>
-            <div class="flex flex-col items-center">
-              <img src="img/github.svg" class="size-8">
-              <span class="text-sm mt-2">GitHub</span>
-            </div>
-          </div>
-        </div>
+            <span class="pl-3 font-semibold">Instagram</span>
+          </a>
+        </li>
 
-        <!-- Illustration -->
-        <div class="flex items-center justify-center">
-          <img src="img/coder.png" alt="coder illustration" class="max-h-[300px]">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--About Section-->
-  <section id="about" class="relative  py-20 bg-[#0d2f42]">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <!-- Left (Image) -->
-      <div class="flex justify-center" data-aos="fade-left">
-        <div class="relative w-96">
+        <!-- Facebook -->
+        <li>
+          <a href="https://www.facebook.com/share/1GGhNBEYas/" target="_blank"
+            class="group flex items-center justify-start text-transparent hover:text-white  w-[180px] translate-x-36 hover:translate-x-0 transition-all duration-500 rounded-l-full pl-3 pr-6 py-3 bg-black/40 backdrop-blur-sm shadow-lg hover:bg-[#3b5999]">
+            <div
+              class="size-7 bg-white rounded-full p-1 transform transition-transform duration-700 group-hover:rotate-[360deg]">
+              <img class="w-full h-full  object-contain border " src="img/facebook.svg" alt="">
+            </div>
+            <span class="pl-3 font-semibold">Facebook</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="banner relative isolate md:h-screen min-h-96  max-h-[1100px]" data-aos="fade-in">
+      <div
+        class="relative isolate flex items-center justify-center overflow-hidden md:h-screen min-h-96 max-h-[1100px] bg-[#081c29] py-24 md:py-32 pt-7 md:pt-32">
+        <div data-aos="zoom-in-up" data-aos-delay="2000" class=" absolute top-0 left-auto right-auto w-6xl mx-auto">
+          <!-- Blurred Gradient Blobs -->
           <div
-            class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 to-teal-400 blur-3xl opacity-40 animate-pulse">
+            class="absolute z-20 -top-2/6 left-auto -right-1/4 w-[500px] h-[500px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse">
           </div>
-          <img src="img/vidhyashri-new11.jpg" alt="About Me"
-            class="relative z-10 w-full  object-cover rounded-2xl shadow-xl border-4 border-cyan-300/30">
-        </div>
-      </div>
-
-      <!-- Right (Content) -->
-      <div class="space-y-6" data-aos="fade-right">
-        <h2 class="text-3xl font-bold">About <span class="text-cyan-300">Me</span></h2>
-        <p class="text-gray-300 leading-relaxed">
-          I’m <span class="text-cyan-300 font-semibold">Vidhyashri Lovewanshi</span>, a passionate
-          <span class="text-teal-300 font-semibold">Frontend Developer</span> with 10+ years of experience
-          building modern, responsive, and user-friendly web applications.
-        </p>
-        <p class="text-gray-400 leading-relaxed">
-          I specialize in <span class="text-cyan-300">React</span>,
-          <span class="text-cyan-300">JavaScript (ES6+)</span>, and
-          <span class="text-cyan-300">TailwindCSS</span>.
-          I love turning ideas into interactive, accessible, and high-performance products.
-        </p>
-
-        <!-- Info List -->
-        <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
-          <p><span class="text-cyan-300">Name:</span> Vidhyashri Lovewanshi</p>
-          <p><span class="text-cyan-300">Role:</span> Frontend Developer</p>
-          <p><span class="text-cyan-300">Experience:</span> 10+ Years</p>
-          <p><span class="text-cyan-300">Location:</span> India</p>
-        </div>
-
-        <!-- Buttons -->
-        <div class="flex gap-4 pt-4">
-          <div class="mt-8 flex gap-4">
-            <a href="javascript:void(0);"
-              class="open-about px-6 py-3 rounded-md border border-cyan-300 text-[#0b0f19] font-semibold  bg-[radial-gradient(circle_at_center,_#a5f3fc,_#22d3ee,_#06b6d4)]  bg-[length:150%_150%] bg-[position:center]  hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50 transition-[background-position,box-shadow] duration-700 ease-in-out">
-              More About Me
-            </a>
-            <a target="_blank" href="vidhyashri-ui-developer-resume.pdf"
-              class="px-6 py-3 rounded-md border border-cyan-300 text-white font-semibold bg-[radial-gradient(circle_at_center,_#0d4053,_#082131,_#4ea4b1)] bg-[length:150%_150%] bg-[position:center] hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50  transition-[background-position,box-shadow] duration-700 ease-in-out">
-              Download CV
-            </a>
+          <div
+            class="absolute z-20 top-20 left-0 w-[400px] h-[400px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse">
+          </div>
+          <div
+            class="absolute z-20 top-2/4 left-0 w-1/2 h-[600px] bg-cyan-900 rounded-full mix-blend-screen filter blur-[180px]  animate-pulse">
           </div>
         </div>
-      </div>
+        <div class="max-w-6xl w-full grid md:grid-cols-12 lg:grid-cols-2 md:gap-10 items-center relative z-30 px-6">
+          <!-- left Image with Neon Glow -->
+          <div class="flex justify-center md:col-span-4 lg:col-span-1 ">
+            <div class="relative " data-aos="zoom-in-up" data-aos-delay="1500">
+              <div
+                class="absolute w-44 bottom-12 left-10  rounded-full flex items-center rounded-[92px 54px] overflow-hidden justify-center  border-transparent -z-[1] "
+                data-aos="fade-in" data-aos-delay="2500" data-aos-easing="ease-in-sine">
+                <!-- Image -->
+                <img src="img/Vidhyashri-love1c.png" alt="Profile" class="w-full object-cover" />
+              </div>
 
+              <div class="animate-pulse"> <img src="img/banner.svg" alt=""></div>
+            </div>
+          </div>
+          <!-- right Text -->
+          <div class="md:col-span-8 lg:col-span-1">
+            <h3 class="text-lg md:text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100"
+              data-aos-easing="ease-in-sine">
+              Hello, It's Me</h3>
+            <h1 class="text-2xl md:text-4xl  xl:text-5xl font-bold text-cyan-300 mt-2" data-aos="fade-up"
+              data-aos-delay="200" data-aos-easing="ease-in-sine">
+              Vidhyashri Lovewanshi
+            </h1>
+            <h2 class="text-xl md:text-2xl xl:text-3xl font-semibold mt-2 text-white" data-aos="fade-up"
+              data-aos-delay="300" data-aos-easing="ease-in-sine">
+              And I'm a <span id="typing" class="text-cyan-300"></span>
+            </h2>
+            <p class="mt-4 text-gray-400 leading-relaxed text-sm md:text-base" data-aos="fade-up" data-aos-delay="400"
+              data-aos-easing="ease-in-sine">
+              👉 “Frontend Developer specializing in
+              <span class="text-gray-100 font-medium">React.js</span> and
+              <span class="text-gray-200 font-medium">TailwindCSS</span>,
+              crafting
+              <span class="text-gray-100 font-medium">Pixel-Perfect UIs</span> with
+              <span class="text-gray-200 font-medium">Clean, Maintainable Code</span>.
+              Leveraging <span class="text-gray-100 font-medium">JavaScript</span> and
+              <span class="text-gray-200 font-medium">modern tools (AI)</span> for faster,
+              scalable, and high-quality web development.”
+            </p>
+            <!-- Buttons -->
+            <div class="mt-8 flex gap-4" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-in-sine">
+              <a href="javascript:void(0);"
+                class="open-about px-6 py-3 rounded-md border border-cyan-300 text-[#0b0f19] font-semibold  bg-[radial-gradient(circle_at_center,_#a5f3fc,_#22d3ee,_#06b6d4)]  bg-[length:150%_150%] bg-[position:center]  hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50 transition-[background-position,box-shadow] duration-700 ease-in-out">
+                About Me
+              </a>
+              <a target="_blank" href="vidhyashri-ui-developer-resume.pdf"
+                class="px-6 py-3 rounded-md border border-cyan-300 text-white font-semibold bg-[radial-gradient(circle_at_center,_#0d4053,_#082131,_#4ea4b1)] bg-[length:150%_150%] bg-[position:center] hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50  transition-[background-position,box-shadow] duration-700 ease-in-out">
+                Download CV
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-  </section>
-  <!-- Skills -->
-  <style>
-    /* default: progress bar hidden (width:0) — will expand when AOS adds .aos-animate */
-    .bar {
-      width: 0;
-    }
 
-    /* animate width to custom --w when parent gets aos-animate */
-    .aos-animate .bar {
-      width: var(--w);
-      transition: width 1400ms cubic-bezier(.2, .9, .3, 1);
-    }
+    <!-- Popup Section -->
+    <div id="aboutPopup"
+      class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+      <div id="popupContent"
+        class="relative w-[90%] md:w-[80%] 2xl:w-[60%]  bg-[#081c29] text-cyan-300 rounded-2xl shadow-2xl p-6 md:p-10 transform scale-95 opacity-0 transition-all duration-300 ease-out max-h-screen overflow-x-hidden overflow-y-auto">
 
-    /* circle initial dashoffset (full circle) */
-    .circle {
-      stroke-dasharray: 251;
-      stroke-dashoffset: 251;
-      transition: stroke-dashoffset 1400ms cubic-bezier(.2, .9, .3, 1);
-      transform-origin: 50% 50%;
-      transform: rotate(-90deg);
-    }
+        <!-- Close Button -->
+        <button id="closePopup" class="absolute top-4 right-4 text-cyan-300 hover:text-white transition cursor-pointer">
+          ✕
+        </button>
 
-    /* when parent visible, animate to --dash value */
-    .aos-animate .circle {
-      stroke-dashoffset: var(--dash);
-    }
+        <!-- About Me Content -->
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <!-- Text Section -->
+          <div>
+            <h2 class="text-3xl font-bold text-white">About <span class="text-cyan-300">Me</span></h2>
+            <p class="mb-6 leading-relaxed text-[#c9f8ff] ">
+              I am a professional Frontend Developer with expertise in creating modern, responsive, and creative web
+              applications.
+              I focus on clean code, pixel-perfect designs, and building websites that are visually appealing and
+              user-friendly.
+              Here are the tools and technologies I use:
+            </p>
 
-    /* small style so numbers are centered */
-    .circle-label {
-      transform: translateY(-2px);
-    }
-  </style>
-  <section id="Skills" class="py-16 px-6 ">
+            <!-- Skills List -->
+            <ul class="flex flex-wrap gap-2 text-xs mb-6">
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#HTML5</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#CSS3 / SCSS</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#JavaScript (ES6+)</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#React.js</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Tailwind CSS</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#React Router</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Axios / Fetch API</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Framer Motion / AOS</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Responsive Design</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Clean Code</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#UI/UX Design</li>
+              <li class="px-3 py-1 bg-[#112a3d] rounded-lg">#Git & GitHub</li>
+            </ul>
 
-    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-300">Skills</span>
-    </h2>
+            <!-- Frontend Tools Icons -->
+            <h3 class="text-2xl font-semibold mt-6 mb-4 text-white">FRONTEND <span class="text-cyan-300">TOOLS</span>
+            </h3>
+            <div class="flex gap-3 items-center flex-wrap">
+              <div class="flex flex-col items-center">
+                <img src="img/react.svg" class="size-8">
+                <span class="text-sm mt-2">React.js</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <img src="img/tailwindcss.svg" class="size-8">
+                <span class="text-sm mt-2">Tailwind CSS</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <img src="img/javascript.svg" class="size-8">
+                <span class="text-sm mt-2">JavaScript</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <img src="img/git.svg" class="size-8">
+                <span class="text-sm mt-2">Git</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <img src="img/github.svg" class="size-8">
+                <span class="text-sm mt-2">GitHub</span>
+              </div>
+            </div>
+          </div>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-
-      <!-- Left: Technical -->
-      <div data-aos="fade-up">
-        <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
-        <!-- HTML -->
-        <div data-aos="fade-right" class="mb-6">
-          <div class="flex justify-between mb-1">
-            <span>HTML</span><span>90%</span>
-          </div>
-          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-            <!-- set --w to target width -->
-            <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:90%"></div>
-          </div>
-        </div>
-
-        <!-- CSS -->
-        <div data-aos="fade-right" data-aos-delay="100" class="mb-6">
-          <div class="flex justify-between mb-1">
-            <span>CSS</span><span>95%</span>
-          </div>
-          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-            <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:95%"></div>
-          </div>
-        </div>
-
-        <!-- JavaScript -->
-        <div data-aos="fade-right" data-aos-delay="200" class="mb-6">
-          <div class="flex justify-between mb-1">
-            <span>JavaScript</span><span>70%</span>
-          </div>
-          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-            <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:70%"></div>
-          </div>
-        </div>
-
-        <!-- Tailwind -->
-        <div data-aos="fade-right" data-aos-delay="300" class="mb-6">
-          <div class="flex justify-between mb-1">
-            <span>Tailwind</span><span>80%</span>
-          </div>
-          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-            <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:80%"></div>
-          </div>
-        </div>
-
-        <!-- React -->
-        <div data-aos="fade-right" data-aos-delay="400" class="mb-6">
-          <div class="flex justify-between mb-1">
-            <span>React</span><span>60%</span>
-          </div>
-          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-            <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:60%"></div>
-          </div>
-        </div>
-        <!-- Git & Github -->
-        <div data-aos="fade-right" data-aos-delay="400" class="mb-6">
-          <div class="flex justify-between mb-1">
-            <span>Git & Github</span><span>80%</span>
-          </div>
-          <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-            <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:80%"></div>
+          <!-- Illustration -->
+          <div class="flex items-center justify-center">
+            <img src="img/coder.png" alt="coder illustration" class="max-h-[300px]">
           </div>
         </div>
       </div>
-
-      <!-- Right: Professional (circular) -->
-      <div data-aos="fade-up">
-        <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
-
-        <div class="grid grid-cols-2 gap-8">
-
-          <!-- Creativity 90% -->
-          <div data-aos="zoom-in" class="flex flex-col items-center">
-            <div class="relative w-24 h-24">
-              <svg viewBox="0 0 100 100" class="w-24 h-24">
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="text-gray-700 fill-transparent" fill="transparent" />
-                <!-- circle stroke uses CSS var --dash -->
-                <!-- for 90%: dashoffset = circumference*(1-0.9) ≈ 25 -->
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="circle text-cyan-300 fill-transparent" style="--dash:10"></circle>
-              </svg>
-              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">90%</span>
-            </div>
-            <p class="mt-2">Creativity</p>
-          </div>
-
-          <!-- Communication 65% -->
-          <div data-aos="zoom-in" data-aos-delay="100" class="flex flex-col items-center">
-            <div class="relative w-24 h-24">
-              <svg viewBox="0 0 100 100" class="w-24 h-24">
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="text-gray-700 fill-transparent" fill="transparent" />
-                <!-- 65% -> dash ≈ 251*(1-0.65)=~88 -->
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="circle text-cyan-300 fill-transparent" style="--dash:10"></circle>
-              </svg>
-              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">90%</span>
-            </div>
-            <p class="mt-2">Communication</p>
-          </div>
-
-          <!-- Problem Solving 75% -->
-          <div data-aos="zoom-in" data-aos-delay="200" class="flex flex-col items-center">
-            <div class="relative w-24 h-24">
-              <svg viewBox="0 0 100 100" class="w-24 h-24">
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="text-gray-700 fill-transparent" fill="transparent" />
-                <!-- 75% -> dash ≈ 251*(1-0.75)=~63 -->
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="circle text-cyan-300 fill-transparent" style="--dash:20"></circle>
-              </svg>
-              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">80%</span>
-            </div>
-            <p class="mt-2">Problem Solving</p>
-          </div>
-
-          <!-- Teamwork 95% -->
-          <div data-aos="zoom-in" data-aos-delay="300" class="flex flex-col items-center">
-            <div class="relative w-24 h-24">
-              <svg viewBox="0 0 100 100" class="w-24 h-24">
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="text-gray-700 fill-transparent" fill="transparent" />
-                <!-- 95% -> dash ≈ 251*(1-0.95)=~38 -->
-                <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
-                  class="circle text-cyan-300 fill-transparent" style="--dash:5"></circle>
-              </svg>
-              <span class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">95%</span>
-            </div>
-            <p class="mt-2">Teamwork</p>
-          </div>
-
-        </div>
-      </div>
-
     </div>
-  </section>
-  <!-- Latest Work -->
-  <section id="my-works" class="bg-[#0d2f42] py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-300">Work</span>
+    <!--About Section-->
+    <section id="about" class="relative  py-20 bg-[#0d2f42]">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Left (Image) -->
+        <div class="flex justify-center" data-aos="fade-left">
+          <div class="relative w-96">
+            <div
+              class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 to-teal-400 blur-3xl opacity-40 animate-pulse">
+            </div>
+            <img src="img/vidhyashri-new11.jpg" alt="About Me"
+              class="relative z-10 w-full  object-cover rounded-2xl shadow-xl border-4 border-cyan-300/30">
+          </div>
+        </div>
+
+        <!-- Right (Content) -->
+        <div class="space-y-6" data-aos="fade-right">
+          <h2 class="text-3xl font-bold">About <span class="text-cyan-300">Me</span></h2>
+          <p class="text-gray-300 leading-relaxed">
+            I’m <span class="text-cyan-300 font-semibold">Vidhyashri Lovewanshi</span>, a passionate
+            <span class="text-teal-300 font-semibold">Frontend Developer</span> with 10+ years of experience
+            building modern, responsive, and user-friendly web applications.
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            I specialize in <span class="text-cyan-300">React</span>,
+            <span class="text-cyan-300">JavaScript (ES6+)</span>, and
+            <span class="text-cyan-300">TailwindCSS</span>.
+            I love turning ideas into interactive, accessible, and high-performance products.
+          </p>
+
+          <!-- Info List -->
+          <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
+            <p><span class="text-cyan-300">Name:</span> Vidhyashri Lovewanshi</p>
+            <p><span class="text-cyan-300">Role:</span> Frontend Developer</p>
+            <p><span class="text-cyan-300">Experience:</span> 10+ Years</p>
+            <p><span class="text-cyan-300">Location:</span> India</p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-4 pt-4">
+            <div class="mt-8 flex gap-4">
+              <a href="javascript:void(0);"
+                class="open-about px-6 py-3 rounded-md border border-cyan-300 text-[#0b0f19] font-semibold  bg-[radial-gradient(circle_at_center,_#a5f3fc,_#22d3ee,_#06b6d4)]  bg-[length:150%_150%] bg-[position:center]  hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50 transition-[background-position,box-shadow] duration-700 ease-in-out">
+                More About Me
+              </a>
+              <a target="_blank" href="vidhyashri-ui-developer-resume.pdf"
+                class="px-6 py-3 rounded-md border border-cyan-300 text-white font-semibold bg-[radial-gradient(circle_at_center,_#0d4053,_#082131,_#4ea4b1)] bg-[length:150%_150%] bg-[position:center] hover:bg-[position:-180%_20%] hover:shadow-lg hover:shadow-cyan-300/50  transition-[background-position,box-shadow] duration-700 ease-in-out">
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Skills -->
+    <style>
+      /* default: progress bar hidden (width:0) — will expand when AOS adds .aos-animate */
+      .bar {
+        width: 0;
+      }
+
+      /* animate width to custom --w when parent gets aos-animate */
+      .aos-animate .bar {
+        width: var(--w);
+        transition: width 1400ms cubic-bezier(.2, .9, .3, 1);
+      }
+
+      /* circle initial dashoffset (full circle) */
+      .circle {
+        stroke-dasharray: 251;
+        stroke-dashoffset: 251;
+        transition: stroke-dashoffset 1400ms cubic-bezier(.2, .9, .3, 1);
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+      }
+
+      /* when parent visible, animate to --dash value */
+      .aos-animate .circle {
+        stroke-dashoffset: var(--dash);
+      }
+
+      /* small style so numbers are centered */
+      .circle-label {
+        transform: translateY(-2px);
+      }
+    </style>
+    <section id="Skills" class="py-16 px-6 ">
+
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-300">Skills</span>
       </h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
-        <!-- E-commerce Website -->
-        <div
-          class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
-          data-aos="fade-up">
-          <img src="img/ecommerce.jpg" alt="E-commerce Website"
-            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent   md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-            <h3 class="text-xl font-semibold text-cyan-300">E-commerce Website</h3>
-            <p class="text-gray-300 text-sm mt-2">Responsive online store with modern UI/UX & smooth checkout flow.</p>
+        <!-- Left: Technical -->
+        <div data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+          <!-- HTML -->
+          <div data-aos="fade-right" class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span>HTML</span><span>90%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+              <!-- set --w to target width -->
+              <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:90%"></div>
+            </div>
           </div>
-        </div>
-        <!-- Business Websites -->
-        <div
-          class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
-          data-aos="fade-up">
-          <img src="img/business.jpg" alt="Portfolio Website"
-            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-            <h3 class="text-xl font-semibold text-cyan-300">Business Websites</h3>
-            <p class="text-gray-300 text-sm mt-2">
-              Developed professional corporate websites focusing on branding and performance.</p>
-          </div>
-        </div>
-        <!-- School Management -->
-        <div
-          class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
-          data-aos="fade-up">
-          <img src="img/school-managment.jpg" alt="School Management"
-            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-            <h3 class="text-xl font-semibold text-cyan-300">School Management Platform</h3>
-            <p class="text-gray-300 text-sm mt-2">Platform for managing students, teachers & classes effectively.</p>
-          </div>
-        </div>
 
-        <!-- Portfolio Website -->
-        <div
-          class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
-          data-aos="fade-up">
-          <img src="img/portfolio.jpg" alt="Portfolio Website"
-            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-            <h3 class="text-xl font-semibold text-cyan-300">Portfolio Website</h3>
-            <p class="text-gray-300 text-sm mt-2">
-              Designed and deployed personal portfolios with glassmorphism and interactive effects. </p>
+          <!-- CSS -->
+          <div data-aos="fade-right" data-aos-delay="100" class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span>CSS</span><span>95%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+              <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:95%"></div>
+            </div>
           </div>
-        </div>
 
-        <!-- Media Websites -->
-        <div
-          class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
-          data-aos="fade-up">
-          <img src="img/media.jpg" alt="Portfolio Website"
-            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-            <h3 class="text-xl font-semibold text-cyan-300">Media Websites</h3>
-            <p class="text-gray-300 text-sm mt-2">Designed content-heavy sites optimized for SEO and seamless media
-              streaming.</p>
+          <!-- JavaScript -->
+          <div data-aos="fade-right" data-aos-delay="200" class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span>JavaScript</span><span>70%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+              <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:70%"></div>
+            </div>
+          </div>
+
+          <!-- Tailwind -->
+          <div data-aos="fade-right" data-aos-delay="300" class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span>Tailwind</span><span>80%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+              <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:80%"></div>
+            </div>
+          </div>
+
+          <!-- React -->
+          <div data-aos="fade-right" data-aos-delay="400" class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span>React</span><span>60%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+              <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:60%"></div>
+            </div>
+          </div>
+          <!-- Git & Github -->
+          <div data-aos="fade-right" data-aos-delay="400" class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span>Git & Github</span><span>80%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+              <div class="bar bg-cyan-300 h-2 rounded-full" style="--w:80%"></div>
+            </div>
           </div>
         </div>
 
-        <!-- Animation Websites -->
-        <div
-          class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
-          data-aos="fade-up">
-          <img src="img/animation-website.jpg" alt="Portfolio Website"
-            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+        <!-- Right: Professional (circular) -->
+        <div data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
+
+          <div class="grid grid-cols-2 gap-8">
+
+            <!-- Creativity 90% -->
+            <div data-aos="zoom-in" class="flex flex-col items-center">
+              <div class="relative w-24 h-24">
+                <svg viewBox="0 0 100 100" class="w-24 h-24">
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="text-gray-700 fill-transparent" fill="transparent" />
+                  <!-- circle stroke uses CSS var --dash -->
+                  <!-- for 90%: dashoffset = circumference*(1-0.9) ≈ 25 -->
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="circle text-cyan-300 fill-transparent" style="--dash:10"></circle>
+                </svg>
+                <span
+                  class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">90%</span>
+              </div>
+              <p class="mt-2">Creativity</p>
+            </div>
+
+            <!-- Communication 65% -->
+            <div data-aos="zoom-in" data-aos-delay="100" class="flex flex-col items-center">
+              <div class="relative w-24 h-24">
+                <svg viewBox="0 0 100 100" class="w-24 h-24">
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="text-gray-700 fill-transparent" fill="transparent" />
+                  <!-- 65% -> dash ≈ 251*(1-0.65)=~88 -->
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="circle text-cyan-300 fill-transparent" style="--dash:10"></circle>
+                </svg>
+                <span
+                  class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">90%</span>
+              </div>
+              <p class="mt-2">Communication</p>
+            </div>
+
+            <!-- Problem Solving 75% -->
+            <div data-aos="zoom-in" data-aos-delay="200" class="flex flex-col items-center">
+              <div class="relative w-24 h-24">
+                <svg viewBox="0 0 100 100" class="w-24 h-24">
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="text-gray-700 fill-transparent" fill="transparent" />
+                  <!-- 75% -> dash ≈ 251*(1-0.75)=~63 -->
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="circle text-cyan-300 fill-transparent" style="--dash:20"></circle>
+                </svg>
+                <span
+                  class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">80%</span>
+              </div>
+              <p class="mt-2">Problem Solving</p>
+            </div>
+
+            <!-- Teamwork 95% -->
+            <div data-aos="zoom-in" data-aos-delay="300" class="flex flex-col items-center">
+              <div class="relative w-24 h-24">
+                <svg viewBox="0 0 100 100" class="w-24 h-24">
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="text-gray-700 fill-transparent" fill="transparent" />
+                  <!-- 95% -> dash ≈ 251*(1-0.95)=~38 -->
+                  <circle cx="50" cy="50" r="40" stroke-width="8" stroke="currentColor"
+                    class="circle text-cyan-300 fill-transparent" style="--dash:5"></circle>
+                </svg>
+                <span
+                  class="absolute inset-0 flex items-center justify-center text-lg font-bold circle-label">95%</span>
+              </div>
+              <p class="mt-2">Teamwork</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Latest Work -->
+    <section id="my-works" class="bg-[#0d2f42] py-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-cyan-300">Work</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          <!-- E-commerce Website -->
           <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-            <h3 class="text-xl font-semibold text-cyan-300">Animation Websites</h3>
-            <p class="text-gray-300 text-sm mt-2">
-              Created interactive, visually engaging websites using modern animation and motion design. </p>
+            class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
+            data-aos="fade-up">
+            <img src="img/ecommerce.jpg" alt="E-commerce Website"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent   md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <h3 class="text-xl font-semibold text-cyan-300">E-commerce Website</h3>
+              <p class="text-gray-300 text-sm mt-2">Responsive online store with modern UI/UX & smooth checkout flow.
+              </p>
+            </div>
+          </div>
+          <!-- Business Websites -->
+          <div
+            class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
+            data-aos="fade-up">
+            <img src="img/business.jpg" alt="Portfolio Website"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <h3 class="text-xl font-semibold text-cyan-300">Business Websites</h3>
+              <p class="text-gray-300 text-sm mt-2">
+                Developed professional corporate websites focusing on branding and performance.</p>
+            </div>
+          </div>
+          <!-- School Management -->
+          <div
+            class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
+            data-aos="fade-up">
+            <img src="img/school-managment.jpg" alt="School Management"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <h3 class="text-xl font-semibold text-cyan-300">School Management Platform</h3>
+              <p class="text-gray-300 text-sm mt-2">Platform for managing students, teachers & classes effectively.</p>
+            </div>
+          </div>
+
+          <!-- Portfolio Website -->
+          <div
+            class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
+            data-aos="fade-up">
+            <img src="img/portfolio.jpg" alt="Portfolio Website"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <h3 class="text-xl font-semibold text-cyan-300">Portfolio Website</h3>
+              <p class="text-gray-300 text-sm mt-2">
+                Designed and deployed personal portfolios with glassmorphism and interactive effects. </p>
+            </div>
+          </div>
+
+          <!-- Media Websites -->
+          <div
+            class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
+            data-aos="fade-up">
+            <img src="img/media.jpg" alt="Portfolio Website"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <h3 class="text-xl font-semibold text-cyan-300">Media Websites</h3>
+              <p class="text-gray-300 text-sm mt-2">Designed content-heavy sites optimized for SEO and seamless media
+                streaming.</p>
+            </div>
+          </div>
+
+          <!-- Animation Websites -->
+          <div
+            class="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-lg border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/40 transition-all duration-500"
+            data-aos="fade-up">
+            <img src="img/animation-website.jpg" alt="Portfolio Website"
+              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <h3 class="text-xl font-semibold text-cyan-300">Animation Websites</h3>
+              <p class="text-gray-300 text-sm mt-2">
+                Created interactive, visually engaging websites using modern animation and motion design. </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Contact -->
-  <section id="contact" class="relative  py-20 text-white">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <!-- Left side -->
-      <div class="space-y-6" data-aos="fade-up">
-        <h2 class="text-3xl font-bold">Contact <span class="text-cyan-300">Me</span></h2>
-        <p class="text-gray-300">
-          Interested in hiring me for your team?
-          Feel free to connect through the details below:
-        </p>
-        <div class="space-y-2">
-          <p><img class="size-5 object-contain inline-block mr-1" src="img/email.svg" alt=""> <a
-              href="mailto:vjlshri8689@gmail.com" class="hover:text-cyan-300">vjlshri8689@gmail.com</a></p>
-          <p><img class="size-6 object-contain inline-block mr-1" src="img/phone.svg" alt=""> <a
-              href="tel:+918349562813" class="hover:text-cyan-300">8349562813</a></p>
-          <p><img class="size-4 object-contain inline-block mr-1" src="img/linkedin1.svg" alt=""> <a
-              href="https://www.linkedin.com/in/vidhyashri-lovewanshi-20b8a399/" target="_blank"
-              class="hover:text-cyan-300">LinkedIn</a></p>
-        </div>
-        <!-- Social Icons -->
-        <div class="flex justify-center gap-4 pt-4">
-          <a href="https://www.linkedin.com/in/vidhyashri-lovewanshi-20b8a399/"
-            class=" size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
-            <img src="img/linkedin-2.gif" alt="">
-          </a>
-          <a href="https://x.com/VLovewanshi99?t=iMHIDLQWzcxUyZHqMcdq3w&s=08"
-            class=" size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
-            <img src="img/twitter.svg" alt="">
-          </a>
-          <a href="https://www.instagram.com/vidyashrilovewanshi?igsh=aDFsN3R0MDdqMDIw"
-            class="size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
-            <img src="img/instagram.svg" alt="">
-          </a>
-          <a href="https://www.facebook.com/share/1GGhNBEYas/"
-            class="size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
-            <img src="img/facebook.svg" alt="">
-          </a>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="relative  py-20 text-white">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <!-- Left side -->
+        <div class="space-y-6" data-aos="fade-up">
+          <h2 class="text-3xl font-bold">Contact <span class="text-cyan-300">Me</span></h2>
+          <p class="text-gray-300">
+            Interested in hiring me for your team?
+            Feel free to connect through the details below:
+          </p>
+          <div class="space-y-2">
+            <p><img class="size-5 object-contain inline-block mr-1" src="img/email.svg" alt=""> <a
+                href="mailto:vjlshri8689@gmail.com" class="hover:text-cyan-300">vjlshri8689@gmail.com</a></p>
+            <p><img class="size-6 object-contain inline-block mr-1" src="img/phone.svg" alt=""> <a
+                href="tel:+918349562813" class="hover:text-cyan-300">8349562813</a></p>
+            <p><img class="size-4 object-contain inline-block mr-1" src="img/linkedin1.svg" alt=""> <a
+                href="https://www.linkedin.com/in/vidhyashri-lovewanshi-20b8a399/" target="_blank"
+                class="hover:text-cyan-300">LinkedIn</a></p>
+          </div>
+          <!-- Social Icons -->
+          <div class="flex justify-center gap-4 pt-4">
+            <a href="https://www.linkedin.com/in/vidhyashri-lovewanshi-20b8a399/"
+              class=" size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
+              <img src="img/linkedin-2.gif" alt="">
+            </a>
+            <a href="https://x.com/VLovewanshi99?t=iMHIDLQWzcxUyZHqMcdq3w&s=08"
+              class=" size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
+              <img src="img/twitter.svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/vidyashrilovewanshi?igsh=aDFsN3R0MDdqMDIw"
+              class="size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
+              <img src="img/instagram.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/share/1GGhNBEYas/"
+              class="size-6 p-0.5 bg-gray-300 hover:bg-white rounded-full border border-white/40   transition overflow-hidden">
+              <img src="img/facebook.svg" alt="">
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="py-6 bg-[#081c29] text-center text-[#7af7ff]    ">
-    © 2025 Vidhyashri Lovewanshi. All rights reserved.
-  </footer>
-  <!-- Scroll to Top -->
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-6 right-6 bg-gradient-to-r from-cyan-300 to-[#164a6d] text-[#081c29] py-2  px-3 rounded-full shadow-lg hover:scale-110 transition w-10 animate-bounce cursor-pointer"><img
-      src="img/arrow-top.svg" alt="">
-  </button>
+    </section>
+    <!-- Footer -->
+    <footer class="py-6 bg-[#081c29] text-center text-[#7af7ff]    ">
+      © 2025 Vidhyashri Lovewanshi. All rights reserved.
+    </footer>
+    <!-- Scroll to Top -->
+    <button id="scrollTopBtn"
+      class="hidden fixed bottom-6 right-6 bg-gradient-to-r from-cyan-300 to-[#164a6d] text-[#081c29] py-2  px-3 rounded-full shadow-lg hover:scale-110 transition w-10 animate-bounce cursor-pointer"><img
+        src="img/arrow-top.svg" alt="">
+    </button>
+  </div>
   <!--AOS animation-->
   <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
   <!-- Typing Animation -->

@@ -29,3 +29,24 @@ html {
   width: 100%;
   overflow-x: hidden;
 }
+
+@keyframes spinGlow {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 0 0 10px #8b5cf6, 0 0 20px #3b82f6;
+  }
+
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 0 0 20px #ec4899, 0 0 40px #facc15;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0 0 10px #8b5cf6, 0 0 20px #3b82f6;
+  }
+}
+
+.loader-circle {
+  animation: spinGlow 2s linear infinite;
+}
